@@ -1,0 +1,333 @@
+/* RESET E CONFIGURAÇÕES GERAIS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+  --primaria: #4f46e5;
+  --secundaria: #7c3aed;
+  --escuro: #0f172a;
+  --maisEscuro: #0a0f1c;
+  --claro: #e2e8f0;
+  --vidro: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    background-color: var(--escuro);
+    color: var(--claro);
+    line-height: 1.6;
+}
+
+/* NAVEGAÇÃO */
+.navegacao {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(15, 23, 42, 0.9);
+    width: 100%;
+    z-index: 1000;
+    padding: 1.2rem;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--vidro);
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+.menu-link {
+    text-decoration: none;
+    color: var(--claro);
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: color 0.3s;
+}
+
+.menu-link::after {
+    content: '';
+    height: 2px;
+    width: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, var(--primaria), var(--secundaria));
+    transition: width 0.3s ease;
+}
+
+.menu-link:hover::after {
+    width: 100%;
+}
+
+/* CABEÇALHO (CENTRALIZAÇÃO) */
+.cabecalho {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 100px 20px 20px 20px;
+    background: radial-gradient(circle at center, #1e293b 0%, var(--maisEscuro) 100%);
+}
+
+.foto-perfil {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--primaria);
+    box-shadow: 0 0 30px rgba(79, 70, 229, 0.4);
+    margin-bottom: 1.5rem;
+    animation: flutuar 5s ease-in-out infinite;
+}
+
+.cabecalho h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(90deg, #fff, var(--primaria));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.cabecalho p {
+    font-size: 1.2rem;
+    color: var(--claro);
+    opacity: 0.8;
+}
+
+/* SEÇÃO SOBRE */
+.sobre {
+    padding: 100px 2rem;
+    background-color: var(--maisEscuro);
+    display: flex;
+    justify-content: center;
+}
+
+.caixa {
+    max-width: 850px;
+    background: var(--vidro);
+    padding: 3.5rem;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+}
+
+.sobre-titulo {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--primaria);
+    text-align: center;
+}
+
+/* SEÇÃO PROJETOS (GRID CORRIGIDO) */
+.projetos {
+    padding: 100px 2rem;
+}
+
+.projeto-titulo {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3.5rem;
+}
+
+.projetos-caixa {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.projetos-card {
+    background: var(--maisEscuro);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--vidro);
+    transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.projetos-card:hover {
+    transform: translateY(-12px);
+    border-color: var(--primaria);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.projeto-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--vidro);
+}
+
+.info-projetos {
+    padding: 1.5rem 1.5rem 0.5rem;
+    font-size: 1.3rem;
+    color: var(--claro);
+}
+
+.paragrafo-projeto {
+    padding: 0 1.5rem 1.5rem;
+    font-size: 0.95rem;
+    color: #94a3b8;
+}
+
+/* CONTATO */
+.contato {
+    padding: 100px 2rem;
+    text-align: center;
+    background-color: var(--maisEscuro);
+}
+
+.contatos-titulos {
+    margin-bottom: 3rem;
+}
+
+.form-contato {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.campo-form, .text-form {
+    background: var(--escuro);
+    border: 1px solid var(--vidro);
+    padding: 1rem;
+    border-radius: 8px;
+    color: white;
+    width: 100%;
+}
+
+.text-form {
+    height: 120px;
+    resize: vertical;
+}
+
+/* Card que envolve os inputs */
+.card-form {
+    background: rgba(255, 255, 255, 0.03); 
+    border: 1px solid var(--vidro);
+    padding: 2rem;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+/* Estilização do Botão */
+.btn-contato {
+    background-color: var(--primaria); 
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    text-transform: none;
+}
+
+.btn-contato:hover {
+    filter: brightness(1.2);
+    transform: scale(1.02);
+}
+
+/* Ajuste fino nos campos para tirar o contorno padrão */
+.campo-form:focus, .text-form:focus {
+    outline: 1px solid var(--primaria);
+    background: var(--maisEscuro);
+}
+
+
+.rodape {
+    padding: 2rem 0;
+    margin-top: 4rem;
+    border-top: 1px solid var(--vidro);
+    text-align: center;
+}
+
+.rodape-conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.rodape-conteudo span {
+    color: var(--claro);
+    opacity: 0.5;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+.links-sutis {
+    display: flex;
+    gap: 1.2rem;
+    justify-content: center;
+}
+
+/* link */
+.links-sutis a, 
+.links-sutis a:link, 
+.links-sutis a:visited, 
+.links-sutis a:active {
+    text-decoration: none !important;
+    color: var(--claro) !important;
+    opacity: 0.4;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: 0.3s;
+}
+
+.links-sutis a:hover {
+    opacity: 1;
+    color: var(--primaria) !important;
+}
+
+.links-sutis i {
+    font-size: 0.9rem;
+}
+
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    .menu {
+        gap: 1rem;
+    }
+    
+    .cabecalho h1 {
+        font-size: 2.2rem;
+    }
+    
+    .projetos-caixa {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+@keyframes flutuar {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);   
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
