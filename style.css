@@ -162,6 +162,20 @@ body {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
+/* Ajuste específico para o card comercial não esticar e ficar alinhado */
+.projeto-comercial {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.projeto-comercial img, 
+.projeto-comercial video {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+
+
 .projeto-img {
     width: 100%;
     height: 200px;
@@ -330,4 +344,40 @@ body {
     100% {
         transform: translateY(0);
     }
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.15); /* Altere o último número (0.15) para deixar mais claro ou mais escuro */
+  margin: 5px auto;
+  max-width: 75%;
+}
+
+/* 1. Garante que o card inteiro tenha um espaço em baixo */
+.projeto-comercial-destaque {
+  padding-bottom: 20px; /* Dá uma margem interna no fundo do card */
+}
+
+/* 2. Ajuste na caixinha de feedback */
+.feedback-cliente {
+  margin: 20px;                   /* Dá espaço nas laterais e embaixo */
+  padding: 16px 20px;            /* Espaçamento interno confortável */
+  background-color: rgba(255, 255, 255, 0.05); /* Fundo sutil para destacar do card */
+  border-left: 4px solid #8a2be2; /* Linha roxa na esquerda */
+  border-radius: 6px;             /* Cantos suavemente arredondados */
+  text-align: left;
+}
+
+.feedback-cliente p {
+  margin: 0 0 8px 0;
+  font-style: italic;
+  color: #e2e8f0;
+}
+
+.feedback-cliente span {
+  display: block;
+  font-size: 0.85em;
+  font-weight: bold;
+  color: #a0aec0;
 }
